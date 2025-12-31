@@ -1,52 +1,145 @@
-html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy New Year Honey ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>For My Honey ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #ffdee9, #b5fffc);
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 6s infinite;
+  opacity: 0.6;
+}
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.6; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Sections */
+.section {
+  padding: 60px 20px;
+  animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 36px;
+  color: #2c2c2c;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #444;
+}
+
+/* Photo cards */
+.photo {
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.4s;
+}
+.photo img {
+  width: 100%;
+}
+.photo:hover {
+  transform: scale(1.05);
+}
+
+/* Message text */
+.message {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #222;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Golden Ticket */
+.ticket {
+  background: linear-gradient(135deg, #ffd700, #ffb700);
+  color: #4a3200;
+  padding: 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+.ticket h2 {
+  margin-top: 0;
+}
+
+/* Proposal */
+.proposal {
+  font-size: 28px;
+  font-weight: bold;
+  color: #b30059;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff66b2; }
+  to { text-shadow: 0 0 25px #ff1a8c; }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h1>Heyy Honeyammaaaaa ❤️</h1>
-    <p>Before this year begins…</p>
-    <button onclick="show()">Tap here</button>
-  </div>
+<!-- Floating hearts -->
+<div class="heart" style="left:10%">❤️</div>
+<div class="heart" style="left:30%">💖</div>
+<div class="heart" style="left:50%">💕</div>
+<div class="heart" style="left:70%">❤️</div>
+<div class="heart" style="left:90%">💗</div>
 
-  <div id="content" style="display:none;">
-
-    <h2>Some moments from this year ✨</h2>
-
-    <img src="images/1.jpg">
-    <img src="images/2.jpg">
-    <img src="images/3.jpg">
-    <img src="images/4.jpg">
-    <img src="images/5.jpg">
-    <img src="images/6.jpg">
-    <img src="images/7.jpg">
-
-    <p>
-      Heyy honeyammaaaaa....hope you've liked this 😁<br><br>
-      2025 is sooo gooddd... best year of my life...<br><br>
-      2026 is ours. We'll grow together 💕<br><br>
-      Love you sooo muchhhh ❤️
-    </p>
-
-    <h2>💛 Golden Ticket 💛</h2>
-    <p>Unlimited Love & Smiles<br>No expiry date</p>
-
-    <h3>Will you stay with me forever? 💍</h3>
-
-  </div>
-<div id="particles"></div>
-
-<div id="answerBox" style="display:none;">
-  <h2>Say it once… 💍</h2>
-  <button class="yesBtn" onclick="yes()">YES ❤️</button>
-  <button class="noBtn" onclick="no()">NO 🙈</button>
+<div class="section">
+  <h1>Some moments from this year ✨</h1>
+  <p class="subtitle">Every smile here means everything to me</p>
 </div>
 
-  <script src="script.js"></script>
+<div class="photo"><img src="image1.jpg"></div>
+<div class="photo"><img src="image2.jpg"></div>
+<div class="photo"><img src="image3.jpg"></div>
+
+<div class="section">
+  <p class="message">
+    Heyy honeyammaaaa 😁<br><br>
+    Hope you loved this little surprise.<br><br>
+    2025 has been sooo good… truly the best year of my life because of you.<br><br>
+    2026 is ours. We’ll grow together 💕<br><br>
+    Love you sooo muchhhh ❤️
+  </p>
+</div>
+
+<div class="ticket">
+  <h2>💛 Golden Ticket 💛</h2>
+  <p><strong>Unlimited Love & Smiles</strong></p>
+  <p>No expiry date</p>
+</div>
+
+<div class="section">
+  <p class="proposal">Will you stay with me forever? 💍</p>
+</div>
+
 </body>
 </html>
