@@ -1,111 +1,47 @@
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
-  overflow-x: hidden;
+  font-family: serif;
+  background: linear-gradient(#f9e0c7, #f6c1b1);
+  overflow: hidden;
 }
 
-/* Main screen */
-.screen {
-  max-width: 430px;
-  min-height: 100vh;
-  margin: auto;
-  padding: 20px;
+.reel {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.slide {
+  height: 100vh;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 20px;
+  animation: fadeIn 1s ease;
 }
 
-/* Text */
-h1 { font-size: 28px; }
-p { font-size: 18px; }
-
-.text {
-  font-size: 20px;
-  line-height: 1.8;
-}
-
-/* Images */
 img {
-  width: 90%;
-  margin: 20px 0;
+  width: 85%;
+  max-width: 400px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  margin: 20px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Buttons */
 button {
-  margin-top: 25px;
-  padding: 14px 35px;
-  border: none;
-  border-radius: 30px;
-  background: #ff4d88;
+  background: #f06292;
   color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* Golden ticket */
-.ticket {
-  background: linear-gradient(135deg, #ffd700, #ffb700);
-  padding: 30px;
+  border: none;
+  padding: 12px 25px;
   border-radius: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.small {
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
-/* ❤️ Heart rain */
-.heart {
-  position: fixed;
-  bottom: -10px;
-  font-size: 18px;
-  animation: floatUp 6s linear infinite;
-  opacity: 0.6;
-  z-index: 0;
-}
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
-}
-
-/* 🎉 Confetti */
-.confetti {
-  position: fixed;
-  top: -10px;
-  width: 8px;
-  height: 8px;
-  background: red;
-  animation: fall 3s linear forwards;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* 💖 Surprise screen */
-#surprise {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 999;
-  padding: 30px;
-}
-#surprise h1 {
-  font-size: 30px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
