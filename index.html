@@ -4,34 +4,46 @@
 <title>For You ❤️</title>
 <style>
 body{
-  margin:0;height:100vh;
-  display:flex;align-items:center;justify-content:center;
+  margin:0;
   background:linear-gradient(135deg,#ffdee9,#b5fffc);
   font-family:Georgia;
   overflow:hidden;
 }
+.screen{
+  max-width:430px;
+  min-height:100vh;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+button{
+  margin-top:30px;
+  padding:15px 35px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d88;
+  color:white;
+  font-size:18px;
+}
 .heart{
-  position:fixed;bottom:-10px;font-size:20px;
-  animation:float 6s linear infinite;opacity:.6;
+  position:fixed;
+  bottom:-10px;
+  font-size:18px;
+  animation:float 6s linear infinite;
+  opacity:.5;
 }
 @keyframes float{
   to{transform:translateY(-110vh);opacity:0}
-}
-.box{text-align:center;animation:fadeUp 1.5s}
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px)}
-  to{opacity:1;transform:translateY(0)}
-}
-button{
-  padding:15px 35px;border:none;border-radius:30px;
-  background:#ff4d88;color:white;font-size:18px;
 }
 </style>
 </head>
 
 <body onclick="go()">
 
-<div class="box">
+<div class="screen">
   <h1>Heyy Honey ❤️</h1>
   <p>Swipe / Tap anywhere</p>
   <button onclick="go()">Start ✨</button>
@@ -46,41 +58,45 @@ setInterval(()=>{
  h.innerHTML="❤️";
  document.body.appendChild(h);
  setTimeout(()=>h.remove(),6000);
-},400);
+},500);
 </script>
 </body>
 </html>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Our Memories ✨</title>
+<title>Memories ✨</title>
 <style>
 body{
-  margin:0;text-align:center;
+  margin:0;
   background:linear-gradient(135deg,#fff1eb,#ace0f9);
   font-family:Georgia;
 }
+.screen{
+  max-width:430px;
+  min-height:100vh;
+  margin:auto;
+  text-align:center;
+  padding-top:30px;
+}
 img{
-  width:85%;max-width:400px;margin:25px;
+  width:90%;
+  margin:20px 0;
   border-radius:20px;
   box-shadow:0 20px 40px rgba(0,0,0,.25);
-  animation:zoom 1.2s;
 }
-@keyframes zoom{
-  from{transform:scale(.8);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-p{font-size:18px}
 </style>
 </head>
 
 <body onclick="next()">
+<div class="screen">
 <h1>Some moments from this year ✨</h1>
-<p>Tap / Swipe anywhere</p>
+<p>Tap anywhere</p>
 
 <img src="image1.jpg">
 <img src="image2.jpg">
 <img src="image3.jpg">
+</div>
 
 <script>
 function next(){location.href='message.html'}
@@ -90,20 +106,33 @@ function next(){location.href='message.html'}
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Message 💖</title>
+<title>Message 💖</title>
 <style>
 body{
-  margin:0;height:100vh;
-  display:flex;align-items:center;justify-content:center;
+  margin:0;
   background:linear-gradient(135deg,#fdfbfb,#ebedee);
   font-family:Georgia;
 }
-.box{max-width:700px;font-size:20px;line-height:1.8}
+.screen{
+  max-width:430px;
+  min-height:100vh;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.text{
+  font-size:20px;
+  line-height:1.8;
+}
 </style>
 </head>
 
 <body onclick="go()">
-<div class="box" id="text"></div>
+<div class="screen">
+  <div class="text" id="t"></div>
+</div>
 
 <script>
 let msg=`Heyy honeyammaaaa 😁
@@ -119,7 +148,7 @@ Love you sooo muchhhh ❤️`;
 let i=0;
 function type(){
  if(i<msg.length){
-  document.getElementById("text").innerHTML+=msg.charAt(i);
+  document.getElementById("t").innerHTML+=msg.charAt(i);
   i++;setTimeout(type,40);
  }
 }
@@ -134,70 +163,54 @@ function go(){location.href='proposal.html'}
 <title>Forever 💍</title>
 <style>
 body{
-  margin:0;height:100vh;
-  display:flex;align-items:center;justify-content:center;
+  margin:0;
   background:linear-gradient(135deg,#ffecd2,#fcb69f);
   font-family:Georgia;
 }
+.screen{
+  max-width:430px;
+  min-height:100vh;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 .ticket{
   background:linear-gradient(135deg,#ffd700,#ffb700);
-  padding:35px;border-radius:25px;
+  padding:30px;
+  border-radius:25px;
   text-align:center;
   box-shadow:0 20px 40px rgba(0,0,0,.3);
-  animation:pop 1.2s;
-}
-@keyframes pop{
-  from{transform:scale(.7);opacity:0}
-  to{transform:scale(1);opacity:1}
 }
 .proposal{
-  font-size:26px;color:#b30059;
-  animation:glow 2s infinite alternate;
-}
-@keyframes glow{
-  from{text-shadow:0 0 10px #ff66b2}
-  to{text-shadow:0 0 25px #ff1a8c}
+  margin-top:20px;
+  font-size:24px;
+  color:#b30059;
 }
 button{
-  margin:15px;padding:12px 30px;
-  border:none;border-radius:25px;
-  font-size:18px;
+  margin-top:15px;
+  padding:12px 30px;
+  border:none;
+  border-radius:25px;
+  background:#ff4d88;
+  color:white;
 }
-#secret{display:none;margin-top:20px}
 </style>
 </head>
 
 <body>
+<div class="screen">
 <div class="ticket">
 <h2>💛 Golden Ticket 💛</h2>
 <p>Unlimited Love & Smiles</p>
 <p>No expiry date</p>
 
-<div class="proposal">Will you stay with me forever? 💍</div>
-
-<button onclick="yes()">YES ❤️</button>
-<button onclick="secret()">💌</button>
-
-<div id="secret">
-  <p>You are my forever, my home, my everything 🥹❤️</p>
-  <p id="count"></p>
-</div>
+<div class="proposal">
+Will you stay with me forever? 💍
 </div>
 
-<script>
-function yes(){
- alert("She said YES 😭❤️");
-}
-function secret(){
- document.getElementById("secret").style.display="block";
-}
-let start=new Date("2026-01-01");
-setInterval(()=>{
- let now=new Date();
- let d=Math.floor((start-now)/86400000);
- document.getElementById("count").innerHTML=
- "Days until our future: "+d;
-},1000);
-</script>
+<button onclick="alert('She said YES ❤️😭')">YES ❤️</button>
+</div>
+</div>
 </body>
 </html>
