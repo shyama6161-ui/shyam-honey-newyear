@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forever 💍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+  <div class="screen">
+    <div class="ticket">
+      <h2>💛 Golden Ticket 💛</h2>
+
+      <p><strong>Unlimited Love & Smiles</strong></p>
+      <p>No expiry date</p>
+
+      <p class="small">
+        Valid for hugs, fights, laughs,
+        silly talks and forever ❤️
+      </p>
+
+      <h3>Will you stay with me forever? 💍</h3>
+
+      <button onclick="yesClicked()">YES ❤️</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<div id="surprise">
+  <div>
+    <h1>She said YES 😭❤️</h1>
+    <p>
+      Thank you for choosing me.<br>
+      No matter what life brings,<br>
+      I promise to walk with you always 💖
+    </p>
+  </div>
+</div>
