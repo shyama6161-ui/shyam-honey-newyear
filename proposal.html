@@ -1,40 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Forever 💍</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>She Said YES 💍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(#f9e0c7, #f6c1b1);
+      font-family: "Georgia", serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      padding: 35px 25px;
+      border-radius: 22px;
+      text-align: center;
+      width: 85%;
+      max-width: 360px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: pop 0.8s ease;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #f06292;
+      color: white;
+      border: none;
+      padding: 14px 34px;
+      border-radius: 30px;
+      font-size: 18px;
+      margin-top: 22px;
+    }
+
+    .yes-screen {
+      display: none;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .yes-screen h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .yes-screen p {
+      font-size: 18px;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="screen">
-    <div class="ticket">
-      <h2>💛 Golden Ticket 💛</h2>
 
-      <p><strong>Unlimited Love & Smiles</strong></p>
-      <p>No expiry date</p>
+  <!-- PROPOSAL CARD -->
+  <div class="card" id="proposalCard">
+    <h2>💛 Golden Ticket 💛</h2>
+    <p><strong>Unlimited Love</strong></p>
+    <p>No expiry date</p>
 
-      <p class="small">
-        Valid for hugs, fights, laughs,
-        silly talks and forever ❤️
-      </p>
+    <p style="margin-top:15px;">
+      Valid for hugs, fights, laughs,<br>
+      support and forever ❤️
+    </p>
 
-      <h3>Will you stay with me forever? 💍</h3>
+    <h3 style="margin-top:18px;">
+      Will you stay with me forever? 💍
+    </h3>
 
-      <button onclick="yesClicked()">YES ❤️</button>
-    </div>
+    <button onclick="sayYes()">YES ❤️</button>
   </div>
 
-  <script src="script.js"></script>
-  <button onclick="celebrate()">YES ❤️</button>
+  <!-- YES SCREEN -->
+  <div class="yes-screen" id="yesScreen">
+    <h1>She said YES 💍❤️</h1>
+    <p>Forever starts now ✨</p>
+  </div>
+
+  <!-- CONFETTI -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    function sayYes() {
+      document.getElementById("proposalCard").style.display = "none";
+      document.getElementById("yesScreen").style.display = "block";
+
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+
+      setTimeout(() => {
+        confetti({
+          particleCount: 150,
+          spread: 120,
+          origin: { y: 0.4 }
+        });
+      }, 600);
+    }
+  </script>
+
 </body>
 </html>
-<div id="surprise">
-  <div>
-    <h1>She said YES 😭❤️</h1>
-    <p>
-      Thank you for choosing me.<br>
-      No matter what life brings,<br>
-      I promise to walk with you always 💖
-    </p>
-  </div>
-</div>
