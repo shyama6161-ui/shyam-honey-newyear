@@ -1,17 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>For You ❤️</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Heyy Honey ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(#f9e0c7, #f6c1b1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #f06292;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 
-<body onclick="goToMemories()">
-  <div class="screen">
-    <h1>Heyy Honey ❤️</h1>
-    <p>Swipe / Tap anywhere</p>
-    <button>Start ✨</button>
-  </div>
+<body>
 
-  <script src="script.js"></script>
+  <h1>Heyy Honey ❤️</h1>
+  <p>Swipe / Tap anywhere</p>
+
+  <button onclick="location.href='message.html'">
+    Start ✨
+  </button>
+
 </body>
 </html>
