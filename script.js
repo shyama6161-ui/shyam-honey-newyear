@@ -1,51 +1,43 @@
-function show() {
-  document.querySelector('.card').style.display = 'none';
-  document.getElementById('content').style.display = 'block';
+/* Navigation */
+function goToMemories() {
+  location.href = "memories.html";
 }
-function start() {
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("main").style.display = "block";
-  typeText();
-  startHearts();
+function goToMessage() {
+  location.href = "message.html";
+}
+function goToProposal() {
+  location.href = "proposal.html";
 }
 
-const text = [
-  "Heyy honeyammaaaaa 😁",
-  "2025 is sooo gooddd...",
-  "Best year of my life...",
-  "Because I got YOU ❤️",
-  "2026 is ours...",
-  "We’ll grow together 💕"
-];
+/* ❤️ Heart rain */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "%";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
 
-let i = 0;
-let j = 0;
-
-function typeText() {
-  if (i < text.length) {
-    if (j < text[i].length) {
-      document.getElementById("type").innerHTML += text[i][j];
-      j++;
-      setTimeout(typeText, 60);
-    } else {
-      document.getElementById("type").innerHTML += "<br><br>";
-      j = 0;
-      i++;
-      setTimeout(typeText, 500);
-    }
+/* 🎉 Confetti */
+function confettiBlast() {
+  for (let i = 0; i < 60; i++) {
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random() * 100 + "%";
+    c.style.background =
+      ["#ff4d88", "#ffd700", "#ff9a9e", "#b5fffc"][
+        Math.floor(Math.random() * 4)
+      ];
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3000);
   }
 }
 
-/* Floating hearts */
-function startHearts() {
-  setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "💖";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 10 + "px";
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 6000);
-  }, 400);
+/* 💍 YES click */
+function yesClicked() {
+  confettiBlast();
+  setTimeout(() => {
+    document.getElementById("surprise").style.display = "flex";
+  }, 600);
 }
