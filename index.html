@@ -1,145 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>For My Honey ❤️</title>
-
+<title>For You ❤️</title>
 <style>
-body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(135deg, #ffdee9, #b5fffc);
-  overflow-x: hidden;
-  text-align: center;
+body{
+  margin:0;height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#ffdee9,#b5fffc);
+  font-family:Georgia;
+  overflow:hidden;
 }
-
-/* Floating hearts */
-.heart {
-  position: fixed;
-  bottom: -10px;
-  font-size: 20px;
-  animation: float 6s infinite;
-  opacity: 0.6;
+.heart{
+  position:fixed;bottom:-10px;font-size:20px;
+  animation:float 6s linear infinite;opacity:.6;
 }
-@keyframes float {
-  0% { transform: translateY(0); opacity: 0.6; }
-  100% { transform: translateY(-100vh); opacity: 0; }
+@keyframes float{
+  to{transform:translateY(-110vh);opacity:0}
 }
-
-/* Sections */
-.section {
-  padding: 60px 20px;
-  animation: fadeUp 1.5s ease;
+.box{text-align:center;animation:fadeUp 1.5s}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
 }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-h1 {
-  font-size: 36px;
-  color: #2c2c2c;
-}
-
-.subtitle {
-  font-size: 18px;
-  color: #444;
-}
-
-/* Photo cards */
-.photo {
-  width: 90%;
-  max-width: 400px;
-  margin: 30px auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  transition: transform 0.4s;
-}
-.photo img {
-  width: 100%;
-}
-.photo:hover {
-  transform: scale(1.05);
-}
-
-/* Message text */
-.message {
-  font-size: 20px;
-  line-height: 1.7;
-  color: #222;
-  max-width: 700px;
-  margin: auto;
-}
-
-/* Golden Ticket */
-.ticket {
-  background: linear-gradient(135deg, #ffd700, #ffb700);
-  color: #4a3200;
-  padding: 30px;
-  border-radius: 25px;
-  width: 90%;
-  max-width: 500px;
-  margin: 40px auto;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
-.ticket h2 {
-  margin-top: 0;
-}
-
-/* Proposal */
-.proposal {
-  font-size: 28px;
-  font-weight: bold;
-  color: #b30059;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff66b2; }
-  to { text-shadow: 0 0 25px #ff1a8c; }
+button{
+  padding:15px 35px;border:none;border-radius:30px;
+  background:#ff4d88;color:white;font-size:18px;
 }
 </style>
 </head>
 
+<body onclick="go()">
+
+<div class="box">
+  <h1>Heyy Honey ❤️</h1>
+  <p>Swipe / Tap anywhere</p>
+  <button onclick="go()">Start ✨</button>
+</div>
+
+<script>
+function go(){location.href='memories.html'}
+setInterval(()=>{
+ let h=document.createElement("div");
+ h.className="heart";
+ h.style.left=Math.random()*100+"%";
+ h.innerHTML="❤️";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
+},400);
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Our Memories ✨</title>
+<style>
+body{
+  margin:0;text-align:center;
+  background:linear-gradient(135deg,#fff1eb,#ace0f9);
+  font-family:Georgia;
+}
+img{
+  width:85%;max-width:400px;margin:25px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  animation:zoom 1.2s;
+}
+@keyframes zoom{
+  from{transform:scale(.8);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+p{font-size:18px}
+</style>
+</head>
+
+<body onclick="next()">
+<h1>Some moments from this year ✨</h1>
+<p>Tap / Swipe anywhere</p>
+
+<img src="image1.jpg">
+<img src="image2.jpg">
+<img src="image3.jpg">
+
+<script>
+function next(){location.href='message.html'}
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Message 💖</title>
+<style>
+body{
+  margin:0;height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#fdfbfb,#ebedee);
+  font-family:Georgia;
+}
+.box{max-width:700px;font-size:20px;line-height:1.8}
+</style>
+</head>
+
+<body onclick="go()">
+<div class="box" id="text"></div>
+
+<script>
+let msg=`Heyy honeyammaaaa 😁
+
+Hope you loved this little surprise.
+
+2025 has been sooo good…
+truly the best year of my life because of you.
+
+2026 is ours. We'll grow together 💕
+
+Love you sooo muchhhh ❤️`;
+let i=0;
+function type(){
+ if(i<msg.length){
+  document.getElementById("text").innerHTML+=msg.charAt(i);
+  i++;setTimeout(type,40);
+ }
+}
+type();
+function go(){location.href='proposal.html'}
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forever 💍</title>
+<style>
+body{
+  margin:0;height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#ffecd2,#fcb69f);
+  font-family:Georgia;
+}
+.ticket{
+  background:linear-gradient(135deg,#ffd700,#ffb700);
+  padding:35px;border-radius:25px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+  animation:pop 1.2s;
+}
+@keyframes pop{
+  from{transform:scale(.7);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+.proposal{
+  font-size:26px;color:#b30059;
+  animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+  from{text-shadow:0 0 10px #ff66b2}
+  to{text-shadow:0 0 25px #ff1a8c}
+}
+button{
+  margin:15px;padding:12px 30px;
+  border:none;border-radius:25px;
+  font-size:18px;
+}
+#secret{display:none;margin-top:20px}
+</style>
+</head>
+
 <body>
-
-<!-- Floating hearts -->
-<div class="heart" style="left:10%">❤️</div>
-<div class="heart" style="left:30%">💖</div>
-<div class="heart" style="left:50%">💕</div>
-<div class="heart" style="left:70%">❤️</div>
-<div class="heart" style="left:90%">💗</div>
-
-<div class="section">
-  <h1>Some moments from this year ✨</h1>
-  <p class="subtitle">Every smile here means everything to me</p>
-</div>
-
-<div class="photo"><img src="image1.jpg"></div>
-<div class="photo"><img src="image2.jpg"></div>
-<div class="photo"><img src="image3.jpg"></div>
-
-<div class="section">
-  <p class="message">
-    Heyy honeyammaaaa 😁<br><br>
-    Hope you loved this little surprise.<br><br>
-    2025 has been sooo good… truly the best year of my life because of you.<br><br>
-    2026 is ours. We’ll grow together 💕<br><br>
-    Love you sooo muchhhh ❤️
-  </p>
-</div>
-
 <div class="ticket">
-  <h2>💛 Golden Ticket 💛</h2>
-  <p><strong>Unlimited Love & Smiles</strong></p>
-  <p>No expiry date</p>
+<h2>💛 Golden Ticket 💛</h2>
+<p>Unlimited Love & Smiles</p>
+<p>No expiry date</p>
+
+<div class="proposal">Will you stay with me forever? 💍</div>
+
+<button onclick="yes()">YES ❤️</button>
+<button onclick="secret()">💌</button>
+
+<div id="secret">
+  <p>You are my forever, my home, my everything 🥹❤️</p>
+  <p id="count"></p>
+</div>
 </div>
 
-<div class="section">
-  <p class="proposal">Will you stay with me forever? 💍</p>
-</div>
-
+<script>
+function yes(){
+ alert("She said YES 😭❤️");
+}
+function secret(){
+ document.getElementById("secret").style.display="block";
+}
+let start=new Date("2026-01-01");
+setInterval(()=>{
+ let now=new Date();
+ let d=Math.floor((start-now)/86400000);
+ document.getElementById("count").innerHTML=
+ "Days until our future: "+d;
+},1000);
+</script>
 </body>
 </html>
