@@ -1,122 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>She Said YES 💍</title>
+  <title>Forever 💍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(#f9e0c7, #f6c1b1);
-      font-family: "Georgia", serif;
-      overflow: hidden;
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(#f9e0c7,#f6c1b1);
+      font-family:Georgia,serif;
+      overflow:hidden;
     }
-
-    .card {
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(8px);
-      padding: 35px 25px;
-      border-radius: 22px;
-      text-align: center;
-      width: 85%;
-      max-width: 360px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-      animation: pop 0.8s ease;
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      width:85%;
+      max-width:340px;
     }
-
-    h2 {
-      margin-bottom: 10px;
+    button{
+      margin-top:20px;
+      padding:14px 30px;
+      border:none;
+      border-radius:30px;
+      background:#f06292;
+      color:white;
+      font-size:18px;
     }
-
-    button {
-      background: #f06292;
-      color: white;
-      border: none;
-      padding: 14px 34px;
-      border-radius: 30px;
-      font-size: 18px;
-      margin-top: 22px;
-    }
-
-    .yes-screen {
-      display: none;
-      text-align: center;
-      animation: fadeIn 1s ease;
-    }
-
-    .yes-screen h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .yes-screen p {
-      font-size: 18px;
-    }
-
-    @keyframes pop {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+    .yes{
+      display:none;
+      font-size:28px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- PROPOSAL CARD -->
-  <div class="card" id="proposalCard">
+  <div class="card" id="card">
     <h2>💛 Golden Ticket 💛</h2>
-    <p><strong>Unlimited Love</strong></p>
+    <p>Unlimited Love</p>
     <p>No expiry date</p>
 
-    <p style="margin-top:15px;">
-      Valid for hugs, fights, laughs,<br>
-      support and forever ❤️
-    </p>
-
-    <h3 style="margin-top:18px;">
-      Will you stay with me forever? 💍
-    </h3>
+    <h3>Will you stay with me forever? 💍</h3>
 
     <button onclick="sayYes()">YES ❤️</button>
   </div>
 
-  <!-- YES SCREEN -->
-  <div class="yes-screen" id="yesScreen">
-    <h1>She said YES 💍❤️</h1>
-    <p>Forever starts now ✨</p>
+  <div class="yes" id="yes">
+    She said YES 💍❤️
   </div>
 
-  <!-- CONFETTI -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
   <script>
-    function sayYes() {
-      document.getElementById("proposalCard").style.display = "none";
-      document.getElementById("yesScreen").style.display = "block";
-
-      confetti({
-        particleCount: 200,
-        spread: 100,
-        origin: { y: 0.6 }
-      });
-
-      setTimeout(() => {
-        confetti({
-          particleCount: 150,
-          spread: 120,
-          origin: { y: 0.4 }
-        });
-      }, 600);
+    function sayYes(){
+      document.getElementById("card").style.display="none";
+      document.getElementById("yes").style.display="block";
+      confetti({particleCount:200,spread:100,origin:{y:0.6}});
     }
   </script>
 
